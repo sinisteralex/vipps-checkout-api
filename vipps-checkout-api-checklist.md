@@ -27,7 +27,8 @@ The Checkout API should be considered an aggregation API of Vipps services, whil
   - [ ] `Vipps-System-Plugin-Name`
   - [ ] `Vipps-System-Plugin-Version`
 - [ ] Follow the [orderId recommendations](https://vippsas.github.io/vipps-developer-docs/docs/vipps-developers/common-topics/orderid).
-- [ ] We recommend using Vipps Order management, as this is a massive benefit for the end user experience. It is mandatory for merchants using ["Vipps Facilitated Content Monitoring"](https://vippsas.github.io/vipps-developer-docs/docs/APIs/order-management-api/vipps-order-management-api).
+- [ ] We recommend using Vipps Order management, as this is a massive benefit for the end user experience. It is mandatory for merchants using
+      ["Vipps-assisted content monitoring"](https://vippsas.github.io/vipps-developer-docs/docs/APIs/order-management-api/vipps-order-management-api#vipps-assisted-content-monitoring).
 - [ ] Correctly handle callbacks from Vipps, both for successful and unsuccessful payments.
       See the API documentation for
       [how callback URLs are built](vipps-checkout-api.md#callback-handling),
@@ -36,7 +37,7 @@ The Checkout API should be considered an aggregation API of Vipps services, whil
   - [ ] Callback [`POST:[callbackPrefix]/checkout/{version}/order/{orderId}`](vipps-checkout-api.md#example-of-callback)
 - [ ] Avoid Integration pitfalls
   - [ ] The Merchant _must not_ rely on `fallback` or `callback` alone, and must poll Payments Details [`GET:/epayment/v1/{reference}`][get-payment-endpoint] or Session Details [`GET:/checkout/v3/{reference}`][retrieve-sessioninfo-endpoint]
-        as documented (this is part of the first item in this checklist, but it's still a common error). For pure payment status polling the ePayment API is recommended.
+        as documented (this is part of the first item in this checklist, but it's still a common error). For pure payment status polling, the ePayment API is recommended.
   - [ ] The merchant must handle that the `fallback` URL is opened in the default browser on the phone,
         and not in a specific browser, in a specific tab, in an embedded browser, requiring a session token, etc.
         See the API guide:
